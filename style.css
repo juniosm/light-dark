@@ -1,11 +1,32 @@
+:root {
+  --cor-primaria: #e21;
+  --cor-primaria-escura: #900;
+  --fundo-1: #f7f7f7;
+  --fundo-2: #ffffff;
+  --texto: #000000;
+  --subtitulo: #c6c6c6;
+  --onda: url(./img/onda-clara.svg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo-1: #111111;
+    --fundo-2: #000000;
+    --texto: #ffffff;
+    --subtitulo: rgba(255, 255, 255, 0.2);
+    --onda: url(./img/onda-escura.svg);
+  }
+}
+
 body {
   margin: 0;
-  background: #f7f7f7;
+  background: var(--fundo-1);
   font-family: Arial, Helvetica, sans-serif;
   display: grid;
   gap: 60px;
   justify-items: center;
   margin-top: 60px;
+  color: var(--texto);
 }
 
 .cabecalho {
@@ -49,15 +70,15 @@ p {
 
 .menu a {
   display: block;
-  background: #ffffff;
-  color: #111;
+  background: var(--fundo-2);
+  color: var(--texto);
   padding: 1rem 2rem;
   border-radius: 4px;
   border: 2px solid transparent;
 }
 
 .menu a:hover {
-  border-color: #ee2211;
+  border-color: var(--cor-primaria);
 }
 
 .corpo {
@@ -67,7 +88,7 @@ p {
 }
 
 .info {
-  background: #ffffff;
+  background: var(--fundo-2);
   padding: 40px;
   text-align: right;
   position: relative;
@@ -79,7 +100,7 @@ p {
 
 .info::before {
   content: "";
-  background: #ee2211;
+  background: var(--cor-primaria);
   width: 60px;
   height: 4px;
   position: absolute;
@@ -88,27 +109,27 @@ p {
 }
 
 .info a {
-  background: #ee2211;
+  background: var(--cor-primaria);
   color: #ffffff;
   border-radius: 4px;
   padding: 1rem 2rem;
 }
 
 .info a:hover {
-  background: #900;
+  background: var(--cor-primaria-escura);
 }
 
 .title-vantagens {
   font-size: 4rem;
-  color: #c6c6c6;
+  color: var(--subtitulo);
   text-align: right;
   padding: 40px;
   align-self: center;
-  background-image: url(./img/onda.svg);
+  background-image: var(--onda);
 }
 
 .vantagens {
-  background: #ffffff;
+  background: var(--fundo-2);
   padding: 40px;
 }
 
@@ -120,11 +141,11 @@ p {
 }
 
 .vt:nth-child(odd) {
-  background: #f7f7f7;
+  background: var(--fundo-1);
 }
 
 .vt:hover {
-  border-left: 4px solid #900;
+  border-left: 4px solid var(--cor-primaria);
 }
 
 .descricao {
@@ -132,7 +153,7 @@ p {
 }
 
 .rodape {
-  background: #ffffff;
+  background: var(--fundo-2);
   width: 100%;
   text-align: center;
   padding: 40px;
